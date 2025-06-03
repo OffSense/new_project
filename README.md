@@ -8,7 +8,7 @@ The site will provide a simple interface for managing personal notes and tasks. 
 
 ## Planned Stack
 
-- **Python 3.10** with **Flask** for the backend API
+- **Python 3.10** with **FastAPI** for the backend API
 - **React** with **Vite** for the frontend interface
 - **PostgreSQL** for persistent storage
 
@@ -24,7 +24,7 @@ The site will provide a simple interface for managing personal notes and tasks. 
    python3 -m venv .venv
    source .venv/bin/activate
    pip install -U pip
-   pip install flask psycopg2-binary
+   pip install -r requirements.txt
    ```
 3. **Set up the frontend**
    ```bash
@@ -33,11 +33,11 @@ The site will provide a simple interface for managing personal notes and tasks. 
    ```
 4. **Run the application**
    ```bash
-   # Start the Flask API
-   FLASK_APP=app.py flask run
+   # Start the FastAPI server
+   uvicorn app.main:app --reload
 
    # In another terminal, start the React dev server
    yarn dev
    ```
 
-The above commands assume that `app.py` and the frontend `package.json` will be added later as development progresses.
+The above commands assume that `app/main.py` and the frontend `package.json` will be added later as development progresses.
